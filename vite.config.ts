@@ -11,7 +11,12 @@ import { nitro } from "nitro/vite";
 // Nitro (Vercel) replaces Cloudflare Workers output from @cloudflare/vite-plugin.
 export default defineConfig({
   cloudflare: false,
-  plugins: [nitro()],
+  plugins: [
+    nitro({
+      // Vercel sets VERCEL=1 during CI builds → Build Output API in .vercel/output
+      preset: process.env.VERCEL ? "vercel" : "node-server",
+    }),
+  ],
   tanstackStart: {
     server: { entry: "server" },
   },
