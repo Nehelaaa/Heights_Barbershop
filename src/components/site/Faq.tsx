@@ -4,12 +4,13 @@ import { Plus } from "lucide-react";
 import { SectionLabel, SectionTitle } from "./Section";
 
 const faqs = [
-  { q: "Do I need to book in advance?", a: "We recommend booking 3–5 days ahead, though same-day chairs often open up. Members enjoy skip-the-line priority." },
-  { q: "What's your cancellation policy?", a: "Cancellations more than 12 hours before your appointment are free. Late cancellations are charged 50% of the service." },
-  { q: "Do you accept walk-ins?", a: "Yes, when chairs are open — typically mid-morning and late afternoon. Booking guarantees your slot." },
-  { q: "Can I bring my child?", a: "Of course. Our Young Gentleman service is built for clients under 12, with patient barbers and small chairs." },
-  { q: "Do you sell gift cards?", a: "Yes — physical and digital. Available at the front desk or via the contact form below." },
-  { q: "Is parking available?", a: "Two-hour validated street parking, and a partner garage two blocks west." },
+  { q: "Do I need to book in advance?", a: "Walk-ins are welcome when chairs are open. For weekends and busy afternoons, we recommend calling ahead at (781) 648-9686." },
+  { q: "Where do I park?", a: "Street parking is available along Massachusetts Ave and nearby side streets. Allow a few extra minutes during peak hours." },
+  { q: "What are your hours?", a: "Tuesday–Thursday 9 AM–5 PM, Friday 9 AM–4 PM, Saturday 7 AM–3 PM. Closed Sunday and Monday." },
+  { q: "Where can I read Google reviews?", a: "We have 64+ reviews on Google with a 4.9 rating. Scroll to the Reviews section on this site or open our Google listing to read them all and leave your own." },
+  { q: "Do you cut kids' hair?", a: "Yes — our Kids Cut service is for clients under 12. Our barbers are patient and keep the experience relaxed." },
+  { q: "Do you sell gift cards?", a: "Gift cards are available in-shop. Call us to check balances or purchase over the phone." },
+  { q: "What forms of payment do you accept?", a: "Cash only — as noted by many Google reviewers. Please plan accordingly." },
 ];
 
 export function Faq() {
@@ -23,8 +24,7 @@ export function Faq() {
             Good to <em className="text-gradient-gold not-italic font-normal">know.</em>
           </SectionTitle>
           <p className="mt-8 text-muted-foreground leading-relaxed">
-            Don't see your question here? The team is one message away — we usually
-            reply within an hour during opening hours.
+            Still have a question? Give us a call — we're happy to help during shop hours.
           </p>
         </div>
 
@@ -43,7 +43,7 @@ export function Faq() {
                   <motion.span
                     animate={{ rotate: isOpen ? 45 : 0 }}
                     transition={{ duration: 0.4 }}
-                    className="shrink-0 w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:border-gold transition-colors"
+                    className="shrink-0 w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:border-primary transition-colors"
                   >
                     <Plus className="w-4 h-4" />
                   </motion.span>

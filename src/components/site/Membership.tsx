@@ -4,40 +4,38 @@ import { SectionLabel, SectionTitle } from "./Section";
 
 const plans = [
   {
-    name: "Essential",
-    price: "$120",
+    name: "Regular",
+    price: "$85",
     period: "/ month",
-    desc: "One signature haircut per month, plus member perks.",
-    features: ["1 Signature Haircut", "Priority booking", "10% off products", "Complimentary espresso"],
+    desc: "One classic cut per month — perfect for steady upkeep.",
+    features: ["1 Classic Haircut", "Priority walk-in", "5% off products", "$5 off beard trim"],
     accent: false,
   },
   {
-    name: "Maison Gold",
-    price: "$240",
+    name: "Heights Classic",
+    price: "$150",
     period: "/ month",
-    desc: "Our flagship membership. Most popular among regulars.",
+    desc: "Our most popular plan for clients who come in twice a month.",
     features: [
-      "2 Cuts + 1 Beard service",
-      "Skip-the-line booking",
-      "20% off all products",
-      "Quarterly hot towel shave",
-      "Whisky on arrival",
-      "Birthday gift box",
+      "2 Haircuts per month",
+      "1 Beard trim included",
+      "10% off all services",
+      "Skip-the-line on Saturdays",
+      "Birthday cut on us",
     ],
     accent: true,
   },
   {
-    name: "Noir Reserve",
-    price: "$540",
+    name: "Family Plan",
+    price: "$220",
     period: "/ month",
-    desc: "Unlimited grooming. The full house, always open to you.",
+    desc: "Covers two adults and one kids cut — built for households.",
     features: [
-      "Unlimited cuts & shaves",
-      "Dedicated master barber",
-      "Private hours on request",
-      "30% off all products",
-      "Annual leather kit",
-      "Plus-one referral perks",
+      "2 Adult haircuts",
+      "1 Kids cut",
+      "15% off hot towel shave",
+      "Shared booking priority",
+      "Holiday gift card",
     ],
     accent: false,
   },
@@ -48,9 +46,9 @@ export function Membership() {
     <section id="membership" className="relative py-32 lg:py-48">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mb-20">
-          <SectionLabel>VIP Membership</SectionLabel>
+          <SectionLabel>Membership</SectionLabel>
           <SectionTitle>
-            Join the <em className="text-gradient-gold not-italic font-normal">house.</em>
+            Save when you <em className="text-gradient-gold not-italic font-normal">come back.</em>
           </SectionTitle>
         </div>
 
@@ -64,13 +62,13 @@ export function Membership() {
               transition={{ duration: 0.7, delay: i * 0.1 }}
               className={`group relative p-10 rounded-sm overflow-hidden transition-all duration-500 ${
                 p.accent
-                  ? "bg-gradient-to-b from-card to-background border border-gold/40 shadow-gold lg:-translate-y-4"
-                  : "bg-card border border-border hover:border-gold/30"
+                  ? "bg-gradient-to-b from-card to-background border border-primary/40 shadow-gold lg:-translate-y-4"
+                  : "bg-card border border-border hover:border-primary/30"
               }`}
             >
               {p.accent && (
                 <>
-                  <div className="absolute -top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold to-transparent" />
+                  <div className="absolute -top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
                   <div className="absolute top-6 right-6 flex items-center gap-1.5 text-[10px] uppercase tracking-[0.3em] text-gold">
                     <Crown className="w-3 h-3" /> Popular
                   </div>
@@ -100,15 +98,16 @@ export function Membership() {
                 ))}
               </ul>
 
-              <button
-                className={`mt-10 w-full py-4 text-xs uppercase tracking-[0.3em] rounded-sm transition-all ${
+              <a
+                href="tel:+17816489686"
+                className={`mt-10 w-full py-4 text-xs uppercase tracking-[0.3em] rounded-sm transition-all inline-flex justify-center ${
                   p.accent
                     ? "bg-gradient-gold text-primary-foreground hover-lift"
-                    : "border border-border hover:border-gold hover:text-gold"
+                    : "border border-border hover:border-primary hover:text-gold"
                 }`}
               >
-                Become a member
-              </button>
+                Ask about membership
+              </a>
             </motion.div>
           ))}
         </div>

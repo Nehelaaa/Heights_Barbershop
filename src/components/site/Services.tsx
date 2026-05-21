@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
-import { Scissors, Wind, Droplets, Brush, Baby, Crown, ArrowUpRight } from "lucide-react";
+import { Scissors, Wind, Droplets, Brush, Baby, ArrowUpRight } from "lucide-react";
 import { SectionLabel, SectionTitle } from "./Section";
 
 const services = [
-  { icon: Scissors, name: "Signature Haircut", price: "$65", duration: "45 min", desc: "Consultation, precision cut, hot-towel finish, styling." },
-  { icon: Wind, name: "Skin Fade", price: "$75", duration: "50 min", desc: "Bladework taper down to skin with clean line-up." },
-  { icon: Brush, name: "Beard Sculpting", price: "$45", duration: "30 min", desc: "Shape, line, oil, and condition for shape that lasts." },
-  { icon: Droplets, name: "Hot Towel Shave", price: "$70", duration: "45 min", desc: "Pre-oil, lather, straight razor pass, cold towel, balm." },
-  { icon: Baby, name: "Young Gentleman", price: "$40", duration: "30 min", desc: "Patient, playful cuts for clients under 12." },
-  { icon: Crown, name: "VIP Grooming Hour", price: "$180", duration: "90 min", desc: "Cut, shave, brow, scalp massage, espresso, whisky." },
+  { icon: Scissors, name: "Classic Haircut", price: "$32", duration: "30 min", desc: "Traditional cut, neck trim, and styling — our bread and butter." },
+  { icon: Wind, name: "Skin Fade", price: "$38", duration: "40 min", desc: "Clean taper down to skin with sharp line-up and finish." },
+  { icon: Brush, name: "Beard Trim", price: "$18", duration: "15 min", desc: "Shape, line, and tidy your beard to match your cut." },
+  { icon: Droplets, name: "Hot Towel Shave", price: "$35", duration: "30 min", desc: "Hot towel, lather, straight-razor pass, and soothing balm." },
+  { icon: Baby, name: "Kids Cut", price: "$25", duration: "25 min", desc: "Patient cuts for young clients — under 12 welcome." },
+  { icon: Scissors, name: "Cut & Beard Combo", price: "$45", duration: "45 min", desc: "Full haircut plus beard sculpt in one visit." },
 ];
 
 export function Services() {
@@ -18,7 +18,7 @@ export function Services() {
         <div className="max-w-3xl mb-20">
           <SectionLabel>Services</SectionLabel>
           <SectionTitle>
-            Craft, distilled into <em className="text-gradient-gold not-italic font-normal">six</em> rituals.
+            Straightforward cuts at <em className="text-gradient-gold not-italic font-normal">fair</em> prices.
           </SectionTitle>
         </div>
 
@@ -35,7 +35,7 @@ export function Services() {
                 className="group relative bg-card p-10 cursor-pointer overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-glow opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
 
                 <div className="relative">
                   <div className="flex items-start justify-between mb-12">

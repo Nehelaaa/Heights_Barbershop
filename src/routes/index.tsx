@@ -18,17 +18,18 @@ import { StickyBook } from "@/components/site/StickyBook";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Maison Noir — Luxury Barbering Atelier · Soho, London" },
+      { title: "Heights Barber Shop — Classic Cuts · Arlington, MA" },
       {
         name: "description",
         content:
-          "A modern barbering atelier in Soho. Precision cuts, hot towel shaves, master barbers, and an unhurried hour of quiet luxury. Book your chair.",
+          "Heights Barber Shop on Massachusetts Ave in Arlington. Classic haircuts, skin fades, beard trims, and hot towel shaves. 4.9★ rated. Call (781) 648-9686.",
       },
-      { property: "og:title", content: "Maison Noir — Luxury Barbering Atelier" },
+      { property: "og:title", content: "Heights Barber Shop — Arlington, MA" },
       {
         property: "og:description",
-        content: "Precision cuts. Premium experience. Soho's modern barbering atelier.",
+        content: "Classic neighborhood barbershop. Walk-ins welcome. 1317 Massachusetts Ave, Arlington.",
       },
+      { property: "og:image", content: "/logo.svg" },
       { property: "og:type", content: "website" },
     ],
     scripts: [
@@ -37,22 +38,23 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BarberShop",
-          name: "Maison Noir",
-          image: "/og-image.jpg",
-          telephone: "+44 20 7946 0815",
-          priceRange: "$$$",
+          name: "Heights Barber Shop",
+          image: "/logo.svg",
+          telephone: "+1-781-648-9686",
+          priceRange: "$$",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "42 Hanover Lane",
-            addressLocality: "Soho, London",
-            postalCode: "W1F 9QR",
-            addressCountry: "GB",
+            streetAddress: "1317 Massachusetts Ave",
+            addressLocality: "Arlington",
+            addressRegion: "MA",
+            postalCode: "02476",
+            addressCountry: "US",
           },
-          openingHours: "Tu-Sa 10:00-20:00",
+          openingHours: ["Mo-Fr 09:00-17:00", "Sa 09:00-15:00"],
           aggregateRating: {
             "@type": "AggregateRating",
             ratingValue: "4.9",
-            reviewCount: "412",
+            reviewCount: "64",
           },
         }),
       },

@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import about from "@/assets/about.jpg";
 import { SectionLabel, SectionTitle, FadeIn } from "./Section";
+import { BUSINESS } from "@/data/business";
 
 const stats = [
-  { value: "12K+", label: "Clients Served" },
-  { value: "11", label: "Years Crafting" },
-  { value: "6", label: "Master Barbers" },
-  { value: "4.9", label: "Avg. Rating" },
+  { value: `${BUSINESS.googleRating}★`, label: "Google Rating" },
+  { value: `${BUSINESS.googleReviewCount}+`, label: "Google Reviews" },
+  { value: "Classic", label: "Neighborhood Shop" },
+  { value: "Arlington", label: "Massachusetts Ave" },
 ];
 
 export function About() {
@@ -23,7 +24,7 @@ export function About() {
           >
             <motion.img
               src={about}
-              alt="Master barber working with straight razor"
+              alt="Classic barber giving a precision haircut"
               loading="lazy"
               width={1080}
               height={1920}
@@ -42,26 +43,26 @@ export function About() {
             className="hidden md:block absolute -bottom-8 -right-8 glass-strong px-8 py-6 rounded-sm shadow-gold max-w-xs"
           >
             <p className="font-display italic text-2xl leading-snug">
-              "A haircut is a ritual, not a transaction."
+              "Classic cuts, right in the Heights."
             </p>
             <p className="mt-3 text-xs uppercase tracking-[0.3em] text-gold">
-              — Founder, M. Laurent
+              — Arlington, MA
             </p>
           </motion.div>
         </div>
 
         <div className="lg:col-span-6 lg:pl-8">
-          <SectionLabel>The House</SectionLabel>
+          <SectionLabel>The Shop</SectionLabel>
           <SectionTitle>
-            A modern atelier for <em className="text-gradient-gold not-italic font-normal">timeless</em> grooming.
+            A <em className="text-gradient-gold not-italic font-normal">classic</em> barbershop you can count on.
           </SectionTitle>
 
           <FadeIn delay={0.2}>
             <p className="mt-8 text-lg text-muted-foreground leading-relaxed">
-              Maison Noir is where the old craft of barbering meets contemporary
-              taste. We don't rush. We don't cut corners. Every appointment is
-              a one-hour conversation with a master — hot towel, sharp blade,
-              and a finish you'll feel for weeks.
+              Heights Barber Shop sits on Massachusetts Ave in Arlington — the kind of
+              place with a barber pole in the window and a steady stream of regulars.
+              Whether you need a clean fade, a beard trim, or a straightforward classic
+              cut, our chairs are ready when you are.
             </p>
           </FadeIn>
 
@@ -69,7 +70,7 @@ export function About() {
             <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-px bg-border">
               {stats.map((s) => (
                 <div key={s.label} className="bg-background p-6">
-                  <div className="font-display text-4xl text-gradient-gold">{s.value}</div>
+                  <div className="font-display text-3xl text-gradient-gold">{s.value}</div>
                   <div className="mt-2 text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
                     {s.label}
                   </div>

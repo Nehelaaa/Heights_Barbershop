@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Check, ChevronRight, Calendar, Clock, User, Scissors } from "lucide-react";
 import { SectionLabel, SectionTitle } from "./Section";
 
-const barbers = ["Marcus Laurent", "Elias Romano", "Jonah Vega"];
-const services = ["Signature Haircut", "Skin Fade", "Beard Sculpting", "Hot Towel Shave", "VIP Hour"];
-const times = ["10:00", "11:30", "13:00", "14:30", "16:00", "17:30"];
+const barbers = ["Steve", "David", "Rina", "Taylor", "First Available"];
+const services = ["Classic Haircut", "Skin Fade", "Beard Trim", "Hot Towel Shave", "Cut & Beard Combo"];
+const times = ["9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"];
 
 function getNextDays(n: number) {
   const days = [];
@@ -39,16 +39,19 @@ export function Booking() {
               Book your <em className="text-gradient-gold not-italic font-normal">chair.</em>
             </SectionTitle>
             <p className="mt-8 text-lg text-muted-foreground leading-relaxed">
-              Same-day appointments often available. We hold your slot for 10 minutes
-              after the chosen time — please arrive a few minutes early for an espresso.
+              Walk-ins welcome — use this form to request a time, or call{" "}
+              <a href="tel:+17816489686" className="text-gold link-underline">
+                (781) 648-9686
+              </a>{" "}
+              to book directly.
             </p>
 
             <div className="mt-12 space-y-4">
               {[
-                { icon: User, label: "Choose your master barber" },
-                { icon: Scissors, label: "Select a ritual" },
-                { icon: Calendar, label: "Pick a day that suits you" },
-                { icon: Clock, label: "Lock in the perfect hour" },
+                { icon: User, label: "Pick your barber (or first available)" },
+                { icon: Scissors, label: "Choose your service" },
+                { icon: Calendar, label: "Select a day" },
+                { icon: Clock, label: "Choose a time slot" },
               ].map((s, i) => {
                 const Icon = s.icon;
                 return (
@@ -94,11 +97,11 @@ export function Booking() {
                   >
                     <Check className="w-10 h-10 text-primary-foreground" strokeWidth={3} />
                   </motion.div>
-                  <h3 className="mt-8 font-display text-4xl">Your chair is reserved.</h3>
+                  <h3 className="mt-8 font-display text-4xl">Request received.</h3>
                   <p className="mt-4 text-muted-foreground max-w-md">
                     {service} with {barber} on{" "}
                     {day.toLocaleDateString("en", { weekday: "long", month: "long", day: "numeric" })}{" "}
-                    at {time}. A confirmation has been sent.
+                    at {time}. We'll call to confirm — or reach us at (781) 648-9686.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
@@ -120,10 +123,10 @@ export function Booking() {
                   className="space-y-8"
                 >
                   <Field label="Barber">
-                    <div className="grid grid-cols-3 gap-2">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                       {barbers.map((b) => (
                         <Pill key={b} active={barber === b} onClick={() => setBarber(b)}>
-                          {b.split(" ")[0]}
+                          {b}
                         </Pill>
                       ))}
                     </div>

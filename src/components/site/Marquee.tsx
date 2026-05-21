@@ -2,8 +2,8 @@ import { Sparkles } from "lucide-react";
 
 export function Marquee() {
   const items = [
-    "Precision Cuts", "Hot Towel Shaves", "Master Barbers", "Est. 2014",
-    "Skin Fades", "Beard Sculpting", "VIP Hour", "Soho London",
+    "Classic Haircuts", "Skin Fades", "Beard Trims", "Hot Towel Shaves",
+    "Walk-Ins Welcome", "Arlington MA", "4.9★ Rated", "Massachusetts Ave",
   ];
   const row = [...items, ...items, ...items];
   return (
@@ -14,7 +14,7 @@ export function Marquee() {
             <span className="font-display text-3xl md:text-5xl font-light italic text-foreground/80">
               {t}
             </span>
-            <Sparkles className="w-5 h-5 text-gold shrink-0" />
+            <Sparkles className="w-5 h-5 text-primary shrink-0" />
           </div>
         ))}
       </div>

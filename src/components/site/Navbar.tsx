@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Scissors } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { Logo } from "./Logo";
 
 const links = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Team", href: "#team" },
+  { label: "Reviews", href: "#reviews" },
   { label: "Gallery", href: "#gallery" },
   { label: "Membership", href: "#membership" },
   { label: "Contact", href: "#contact" },
@@ -33,11 +35,8 @@ export function Navbar() {
         }`}
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
-          <a href="#hero" className="flex items-center gap-2 group">
-            <Scissors className="w-5 h-5 text-gold transition-transform group-hover:rotate-12" />
-            <span className="font-display text-xl tracking-wider">
-              MAISON <span className="text-gradient-gold font-medium">NOIR</span>
-            </span>
+          <a href="#hero" className="group transition-opacity hover:opacity-90">
+            <Logo />
           </a>
 
           <nav className="hidden lg:flex items-center gap-10">
@@ -53,10 +52,10 @@ export function Navbar() {
           </nav>
 
           <a
-            href="#booking"
+            href="tel:+17816489686"
             className="hidden lg:inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-gold text-primary-foreground text-xs uppercase tracking-[0.2em] font-medium rounded-sm hover-lift"
           >
-            Book Now
+            Call Now
           </a>
 
           <button
@@ -89,7 +88,7 @@ export function Navbar() {
               className="absolute right-0 top-0 h-full w-full max-w-sm glass-strong p-8 flex flex-col"
             >
               <div className="flex items-center justify-between mb-12">
-                <span className="font-display text-xl">MAISON NOIR</span>
+                <Logo />
                 <button onClick={() => setOpen(false)} aria-label="Close">
                   <X className="w-6 h-6" />
                 </button>
@@ -110,11 +109,11 @@ export function Navbar() {
                 ))}
               </nav>
               <a
-                href="#booking"
+                href="tel:+17816489686"
                 onClick={() => setOpen(false)}
                 className="mt-auto inline-flex justify-center items-center gap-2 px-6 py-4 bg-gradient-gold text-primary-foreground text-xs uppercase tracking-[0.2em] rounded-sm"
               >
-                Book Appointment
+                Call (781) 648-9686
               </a>
             </motion.div>
           </motion.div>
